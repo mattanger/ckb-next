@@ -707,9 +707,8 @@ int closeusb(usbdevice* kb){
     pthread_join(kb->thread, 0);
     pthread_mutex_lock(dmutex(kb));
 
-    // If patched, free the keymap
-    if(kb->keymap != keymap)
-        free(kb->keymap);
+    // Free the device-specific keymap
+    free(kb->keymap);
 
     // Delete the profile and the control path
     if(!kb->vtable)

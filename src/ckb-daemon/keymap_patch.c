@@ -26,22 +26,20 @@ keypatches mappatches[] = {
 /// Iterate through the keypatches array and check for a match against the current device.
 /// If one is found, then copy the keymap, patch it, and add it back to the usbdevice struct.
 void patchkeys(usbdevice* kb){
-    for(unsigned pos = 0; pos < KEYPATCHES_LEN; pos++){
+    // Copy the default keymap over
+    kb->keymap = malloc(sizeof(keymap));
+    memcpy(kb->keymap, keymap, sizeof(keymap));
+    for(size_t pos = 0; pos < KEYPATCHES_LEN; pos++){
         if(mappatches[pos].product == kb->product){
-            key* newmap = malloc(sizeof(keymap));
-            memcpy(newmap, keymap, sizeof(keymap));
             // Patch the copied keymap
-            for(unsigned i = 0; i < mappatches[pos].patchlen; i++){
+            for(size_t i = 0; i < mappatches[pos].patchlen; i++){
                 keypatch* curpatch = mappatches[pos].patch;
                 int idx = curpatch->idx;
-                newmap[idx].name = curpatch->name;
-                newmap[idx].led = curpatch->led;
-                newmap[idx].scan = curpatch->scan;
+                kb->keymap[idx].name = curpatch->name;
+                kb->keymap[idx].led = curpatch->led;
+                kb->keymap[idx].scan = curpatch->scan;
             }
-            kb->keymap = newmap;
             return;
         }
     }
-    // If we got here, the device should use the standard map
-    kb->keymap = keymap;
 }
