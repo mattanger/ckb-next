@@ -3,7 +3,7 @@ Hash: SHA256
 
 # The GPG key: DCEF2F5F - A full copy of it can also be found in src/ckb/ckb-next-key.gpg
 # WARNING: This firmware table is a stub, and is only used to tell old GUIs to update to a newer version.
-# Newer versions read the FIRMWARE8 table, located at the root of the repository, instead of this one.
+# Newer versions read the table located at https://raw.githubusercontent.com/ckb-next/ckb-next/master/FIRMWARE
 !BEGIN FW ENTRIES
 
 # Vendor  Model             FW   URL                                                        Min.ckb File Name                       SHA256
@@ -24,11 +24,11 @@ Hash: SHA256
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v2
 
-iQEcBAEBCAAGBQJaHq5mAAoJEN/iSOvc7y9fviMH/25Iw/ezUq8dfzAQ2oQoB+4o
-wENjAnvKD7kA8maYxvzXy3Xv0pNMUiBjjdvPSqo3VLMqRIJYgd7pNVtyZENjiq6K
-74wwh+oDwgHG6PvPaEOe1KnYz7evMZyrEew6+4N5lXDtT8dnBf1UEl+eCh68KTWL
-0wybPSS7YIE2QIB9SCWeU5cOpq9oImuUD7bAhfuzMLycy7IISTyHbV/z9a6MF8PO
-ASqUYxI6VSeLw9FLFiuXvwrLh9H2j773dNdwHXf8rHH2yjNpRMnS8y/JGpodsOjO
-HTHLjpdMhRAeBM+8vX13X0mMWJM2riNgBGPg/iyibEZPD4E+Twj083hiAauJlh0=
-=e1xj
+iQEcBAEBCAAGBQJaYyTxAAoJEN/iSOvc7y9figUIAIePbWkNca+fF7+hZBup1kZU
+rCRgZ2GU2deETlKbWfN8Au6+fnkHmoV4oztrz8uWLo7VCH5LAuVFGdKHbhnCiIO2
+Q97Gyp1c7IqgIreLcWp89xkzZTmqnxlgcGd7MuSaCeS0Dj2rdRw2ORyHzVhUna4y
+62MIQlB4j2CSIPbnLNJiGWDyFfy/ub4mWWI3DJp9KbN57wckBwsOnLleifJN3Uxv
+PkC+am5Fw2zJhEMX7Swi3RfJCabPabAm9QQ492A3ypGZ60Ihsi4jVfC4peIkWsg3
+wi1IM1aON9NmLlTQWSebxVOwMzPtEi4dC5NJPQWrTkzKxEaB/vn9iY0XHVHZ1bQ=
+=m+Se
 -----END PGP SIGNATURE-----
