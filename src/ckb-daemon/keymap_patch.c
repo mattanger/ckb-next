@@ -23,8 +23,8 @@ keypatches mappatches[] = {
 
 /// \brief
 ///
-/// Iterate through the keypatches array and check for a match against the current device.
-/// If one is found, then copy the keymap, patch it, and add it back to the usbdevice struct.
+/// Copy the keymap to the usbdevice struct, and iterate through the keypatches array.
+/// If a match is found, patch the device-specific keymap in usbdevice.
 void patchkeys(usbdevice* kb){
     // Copy the default keymap over
     kb->keymap = malloc(sizeof(keymap));
