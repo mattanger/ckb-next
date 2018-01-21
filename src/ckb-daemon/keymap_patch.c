@@ -29,15 +29,16 @@ void patchkeys(usbdevice* kb){
     // Copy the default keymap over
     kb->keymap = malloc(sizeof(keymap));
     memcpy(kb->keymap, keymap, sizeof(keymap));
+    // Iterate through the patches for all devices
     for(size_t pos = 0; pos < KEYPATCHES_LEN; pos++){
         if(mappatches[pos].product == kb->product){
-            // Patch the copied keymap
+            // Iterate through the keys in the selected patch
             for(size_t i = 0; i < mappatches[pos].patchlen; i++){
                 keypatch* curpatch = mappatches[pos].patch;
-                int idx = curpatch->idx;
-                kb->keymap[idx].name = curpatch->name;
-                kb->keymap[idx].led = curpatch->led;
-                kb->keymap[idx].scan = curpatch->scan;
+                int idx = curpatch[i].idx;
+                kb->keymap[idx].name = curpatch[i].name;
+                kb->keymap[idx].led = curpatch[i].led;
+                kb->keymap[idx].scan = curpatch[i].scan;
             }
             return;
         }
